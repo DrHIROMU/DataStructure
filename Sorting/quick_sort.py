@@ -1,8 +1,10 @@
+# Time Complexity: O(nlogn)
+
 import math
 import random
 
 def main():
-    numArr = [1, 4, 6, 2, 5, 3]
+    numArr = [1, 4, 6, 2, 5, 3, 6]
     quickSort(numArr, 0, len(numArr)-1)
     print(numArr)
 
