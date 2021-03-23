@@ -22,6 +22,18 @@ class SingleLinkedList:
         self.tail = item
         return
     
+    def del_node(self, delItem):
+        print('Delete element '+str(delItem)+': ')
+        prevNode = None
+        currentNode = self.head
+        while currentNode:   
+            if currentNode.data == delItem and prevNode is not None:
+                prevNode.next = currentNode.next
+                break
+
+            prevNode = currentNode
+            currentNode = currentNode.next
+    
     def show_all_elements(self):
         print('Elements in the linked list:')
         currentNode = self.head
@@ -53,8 +65,11 @@ list1 = SingleLinkedList()
 list1.add_node(node1)
 list1.add_node(33)
 list1.add_node(55)
-
+list1.add_node(21)
 list1.show_all_elements()
+list1.del_node(33)
+list1.show_all_elements()
+
 
 list1.reverse()
 list1.show_all_elements()
